@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="G10na55的博客">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+    <title>
+        
+        UEFI+GPT下Win10+Linux双系统教程 - G10na55的博客 | Mr.G10na55&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 面壁十年图破壁，难酬蹈海亦英雄 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>G10na55</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#First-技能与工具"><span class="toc-text">First 技能与工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Second-启动盘制作"><span class="toc-text">Second 启动盘制作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Third-硬盘分区"><span class="toc-text">Third 硬盘分区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Fourth-重装Windows-10-系统（不想重装可略过此步）"><span class="toc-text">Fourth 重装Windows 10 系统（不想重装可略过此步）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Fifth-制作Linux安装盘"><span class="toc-text">Fifth 制作Linux安装盘</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Sixth-引导"><span class="toc-text">Sixth 引导</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 面壁十年图破壁，难酬蹈海亦英雄 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        UEFI+GPT下Win10+Linux双系统教程
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-29 18:58:46</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#系统安装" title="系统安装">系统安装</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>最近有两三个同学问我怎么装一个优雅地（其实就是好看）双系统，一一回复挺麻烦的，不如写个教程了（第一次写，大佬勿喷）。不过网工的同学不会装系统确实有点说不过去(╯‵□′)╯︵┻━┻（掀起了没技术的桌子）                                                                   ——g10na55</p>
+<h5 id="First-技能与工具"><a href="#First-技能与工具" class="headerlink" title="First 技能与工具"></a>First 技能与工具</h5><p>默认应会技能：会进BIOS，设置优盘启动（下面也会提及，新手教学）</p>
+<p>工欲善其事，必先利其器，还要说一下需要准备的工具和文件：</p>
+<ol>
+<li>优盘一至两个</li>
+<li>Windows和Linux镜像 <a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">Windows原版镜像下载地址</a> Linux镜像采用Ubuntu，可去Ubuntu官网下载</li>
+<li>软碟通（官网下载试用版就可以）</li>
+<li>rEFInd（可选，建议使用，不习惯Linux grub引导的同学可以试一下这个，背景可调。当然不止这一种选择，只是这种方便调整，还有其他人做好的主题）</li>
+<li>优启通（可选，建议使用，无广告的PE，简单好用）<a href="https://www.itsk.com/thread-394990-1-1.html" target="_blank" rel="noopener">优启通下载地址</a></li>
+<li>DG(DiskGenius)（可选，优启通自带，建议使用）</li>
+</ol>
+<p>这几个就够了，因为装Linux与Windows是均需要格式化优盘，所以准备两个优盘还是很方便的，只有一个也无所谓，可以先装Windows，然后再安装Linux（Don’t worry 以下按照只有一个优盘来写）</p>
+<h5 id="Second-启动盘制作"><a href="#Second-启动盘制作" class="headerlink" title="Second 启动盘制作"></a>Second 启动盘制作</h5><p>（本来不想写的这么详细，奈何有个纯小白问起）</p>
+<p>现在可以下载镜像了，后边默认已经有镜像了哦（Windows 10 建议下载最新版1809，目前应该是2019年2月发布的；Ubuntu建议安装16.04，18.04好多软件都没有自带）</p>
+<p>打开启动优启通，插入优盘，点击全新制作</p>
+<p><img src="/img/双系统教程/优启通1.png" alt="优启通1"></p>
+<p>然后就会弹出一条警告，说是会格式化优盘，优盘里无文件或已备份则点击是（没备份抓紧备份，重复上述操作）</p>
+<p><img src="/img/双系统教程/优启通2.png" alt="优启通2"></p>
+<p>等待制作完成就可以退出程序了（杀毒软件会拦截，请添加信任）</p>
+<h5 id="Third-硬盘分区"><a href="#Third-硬盘分区" class="headerlink" title="Third 硬盘分区"></a>Third 硬盘分区</h5><p>（只想学装Windows系统的同学只需要按照喜好分区即可，也可略过此步）</p>
+<p>打开DG，应该会看到如下类似的界面</p>
+<p><img src="/img/双系统教程/DG1.png" alt="DG1"></p>
+<p>好了，现在你应该对DG有了直观的认识，那就接着往下学习吧</p>
+<p>如果你的硬盘格式不是GPT的话，则需要转换为GPT格式，如下图</p>
+<p><img src="/img/双系统教程/DG2.png" alt="DG2"></p>
+<p>做好这些事情之后就是硬盘分区了，建议Win10系统分区100G以上，Ubuntu分区在20G以上，如果不保留硬盘原有数据可以点击快速分区来设定分区大小</p>
+<p><img src="/img/双系统教程/DG3.png" alt="DG3"></p>
+<p>如果要保留数据的话就只能在较大的分区中再在分出一个分区来了</p>
+<p><img src="/img/双系统教程/DG4.png" alt="DG4"></p>
+<p><img src="/img/双系统教程/DG5.png" alt="DG5"></p>
+<p>硬盘分好区就可以系统也差不多下完了，可以进行下一步安装系统了</p>
+<p>注意：系统装到哪个分区中相应分区就会被格式化，请自行备份重要文件！！！</p>
+<h5 id="Fourth-重装Windows-10-系统（不想重装可略过此步）"><a href="#Fourth-重装Windows-10-系统（不想重装可略过此步）" class="headerlink" title="Fourth 重装Windows 10 系统（不想重装可略过此步）"></a>Fourth 重装Windows 10 系统（不想重装可略过此步）</h5><p>需要准备好：1. 下载好的Win 10 镜像（即.iso文件），不要放在C盘即要装入系统的分区；2. 制作好的启动盘</p>
+<p>现在需要打开百度搜索你的品牌如何进入BIOS并设置优盘启动，我的电脑是宏碁(Acer)的，所以按照宏碁的演示，其他品牌都差不多的流程（顺带吐槽一下宏碁，主板是阉割的，害我在装Win10和Win7双系统的时候差点崩溃）</p>
+<p><img src="/img/双系统教程/BIOS.png" alt="BIOS"></p>
+<p>下面的流程无法截图，就直接文字描述了</p>
+<p>关机 –&gt; 按电源键之后立即长按F2，直至进入BIOS设置 –&gt; 按住键盘上的：↑↓←→键，找到“Main”菜单。然后将里面的“F12 boot  menu”设置为：enabled –&gt; 然后找到“Exit”菜单 –&gt; 选择保存设置并退出 –&gt; 然后按住F12，直至进入启动项选择 –&gt; 选择 USB HDD，就进入了PE</p>
+<p>推荐使用“EIX系统安装”工具，但是有个缺点，它不支持直接挂载ISO文件，所以需要点击开始 –&gt; 程序 –&gt; 光盘工具 –&gt; 装载 –&gt; 然后选择ISO的位置，点确定就好了</p>
+<p>然后打开“EIX系统安装”工具 –&gt; 先选择要安装的位置 –&gt; 再选择安装Win10的版本（建议Win10 Pro） –&gt; 然后点击一键恢复 –&gt; 弹出的框中不需要勾选万能驱动，需要勾选格式化目标分区、尝试重建系统引导 –&gt; 然后点确定 –&gt; 等待完成即可。</p>
+<p>重新开机就可进入新装的Win10，只想学装系统的同学到这里就可以结束了</p>
+<h5 id="Fifth-制作Linux安装盘"><a href="#Fifth-制作Linux安装盘" class="headerlink" title="Fifth 制作Linux安装盘"></a>Fifth 制作Linux安装盘</h5><p>Linux系统安装大同小异，Linux其他发行版也可参照此步骤（最新版Kali Linux不支持优盘安装，2017.1版支持，可先安装此版本，后续通过apt升级）</p>
+<ol>
+<li><p>安装软碟通 –&gt; 文件 –&gt;  打开 –&gt;  选择Ubuntu镜像  –&gt; 打开</p>
+</li>
+<li><p>插好优盘 –&gt; 点击“启动” –&gt; 写入硬盘映像 –&gt; 写入 –&gt; 确认 –&gt; 等待写入完成</p>
+</li>
+<li><p>关机 –&gt; 按电源键之后立即长按F12，直至进入启动项选择 –&gt; 选择 USB HDD，就进入到了Ubuntu安装界面 –&gt; 按照提示进行操作，直至选择安装位置 </p>
+<p><img src="/img/双系统教程/Ubuntu1.png" alt="Ubuntu1"></p>
+<p> 在这里选择分出来的给Ubuntu的分区，Linux安装需要swap交换空间，这里我们可以分2G，剩下的用作文件系统，挂载点为/</p>
+<p>确认分区无误后点击现在安装，按照提示完成安装</p>
+</li>
+</ol>
+<h5 id="Sixth-引导"><a href="#Sixth-引导" class="headerlink" title="Sixth 引导"></a>Sixth 引导</h5><p>第五步完成之后就基本完成了，如果喜欢Ubuntu的引导界面可以将Ubuntu设为第一启动项，Ubuntu的引导grub可以引导Windows，而Windows的引导不能引导Linux</p>
+<p>设置方法：进入PE(第一步制作的启动盘) –&gt; 开始 –&gt; 磁盘工具 –&gt; 选择bootice –&gt; UEFI –&gt; 修改启动项序列 –&gt; 将Ubuntu调到首位 –&gt; 保存 –&gt; 退出</p>
+<p>可我觉得Ubuntu的引导很丑，于是用了第三方引导rEFInd，界面美观，还不错（屏幕分辨率大于2k可能不适用）</p>
+<p>设置方法：先进入PE –&gt; 打开DG –&gt; 选择ESP分区 –&gt; 右键 –&gt; 指派新的驱动器符号 –&gt; 退出DG –&gt; 打开文件管理器 –&gt; 将rEFInd文件夹放到刚刚指派的ESP分区下的EFI文件夹里，并删除里面的Ubuntu文件夹 –&gt; 点击开始 –&gt; 磁盘工具 –&gt; 选择bootice –&gt; UEFI –&gt; 修改启动项序列 –&gt; 添加 –&gt; 位置选择rEFInd目录下的refind_x64.efi –&gt; 修改名称并调到首位 –&gt; 保存 –&gt; 退出</p>
+<p>注意：由于Win10默认勾选了快速启动，所以每次进入Win10之后，直接启动Win10会变回启动项的第一个，只需要在控制面板，电源选项，更改电源按钮的功能，取消掉“启用快速启动”前的复选框，保存修改就可以解决这个问题</p>
+<p>最后附上我的系统启动页面和我用的<a href="https://share.weiyun.com/5avUEYv" target="_blank" rel="noopener">rEFInd的链接</a>，祝大家装系统顺利哦！：）</p>
+<p><img src="/img/双系统教程/ZB.png" alt="ZB"></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src data-src="/img/donate.gif">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/G10na55">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+		<span>友情链接：</span>
+        <span>/</span>
+        
+        <span><a href="https://phyb0x.github.io/">phyb0x</a></span>
+        <span>/</span>
+        
+        <span><a href="https://phyb0x.github.io/">phyb0x</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>Powered By G10na55 </p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC80MzQ2Mi8yMDAwMg==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
